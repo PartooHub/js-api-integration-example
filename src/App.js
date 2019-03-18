@@ -23,20 +23,6 @@ class App extends Component {
       enabled: false,
       userToken: '',
       isLoggedIn: false,
-      overrideableActions: {
-        open_business: true,
-        lab_create: true,
-        lab_results_received: true,
-        subscribe: true,
-        business_created: true,
-        error: true,
-        no_eligible_business_click: true,
-        pm_view_go_to_edit_click: true,
-        pm_view_go_to_partner_connection_click: true,
-        no_business_click: true,
-        lab_sign_up_button: true,
-        lab_login_button: true,
-      }
     };
     this.partoo = null;
   }
@@ -87,7 +73,7 @@ class App extends Component {
               <button onClick={() => this.logUser()}>Login</button>
             </div>
         ): (
-          <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+          <div className="btn-group" role="group" aria-label="Button group with nested dropdown">
             <button type="button" className="btn btn-primary" onClick={() => this.navigate('add')}>Add a business</button>
             <button type="button" className="btn btn-primary" onClick={() => this.navigate('businesses')}>Business List</button>
             <button type="button" className="btn btn-primary" onClick={() => this.navigate('presenceManagement')}>Presence Management</button>
