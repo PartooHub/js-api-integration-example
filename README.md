@@ -35,3 +35,5 @@ yarn start
 # if you are using npm
 npm start
 ```
+
+![](./partoo-js-api-integration.gif)
