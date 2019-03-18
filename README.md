@@ -8,8 +8,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Partoo APIs documentation can be found here:
 
-- [REST API](https://doc.partoo.fr/)[https://doc.partoo.fr/rest_api/index.html]
-- [JS API](https://doc.partoo.fr/)[https://doc.partoo.fr/js_api/index.html]
+- [REST API](https://doc.partoo.fr/rest_api/index.html)
+- [JS API](https://doc.partoo.fr/js_api/index.html)
 
 ## Prerequisite
 
