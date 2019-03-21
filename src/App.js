@@ -106,12 +106,12 @@ class App extends Component {
       <div className="App">
         {!this.state.isLoggedIn ? (
             <form>
-              <div class="form-group">
-                <label for="userToken">User token</label>
+              <div className="form-group">
+                <label htmlFor="userToken">User token</label>
                 <input
                   type="text"
                   value={this.state.userToken}
-                  class="form-control"
+                  className="form-control"
                   id="userToken"
                   placeholder="Enter the user token"
                   onChange={(event) => {
@@ -119,29 +119,29 @@ class App extends Component {
                   }}
                 />
               </div>
-              <button type="submit" class="btn btn-primary" onClick={() => this.logUser()}>Submit</button>
+              <button type="submit" className="btn btn-primary" onClick={() => this.logUser()}>Submit</button>
             </form>
         ): (
-          <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="navbar-brand">Partoo</div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <div className="navbar-brand">Partoo</div>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul className="navbar-nav mr-auto">
                 {Object.entries(this.pages).map(([page, label]) => (
                     <li className={this.state.currentPage === page ? "nav-item active": "nav-item"}>
                       <div key={page} className="nav-link" onClick={() => this.navigateTo(page)}>{label}</div>
                     </li>
                 ))}
                 {this.hasOverridableActions() && (
-                  <li class="nav-item dropdown">
-                    <div class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <li className="nav-item dropdown">
+                    <div className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Callbacks (page: {this.pages[this.state.currentPage]})
                     </div>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                       {this.getOverridableActions().map((callback) => (
-                        <div key={callback} class="dropdown-item" onClick={() => (this.setCallback(callback))}>{callback}</div>
+                        <div key={callback} className="dropdown-item" onClick={() => (this.setCallback(callback))}>{callback}</div>
                       ))}
                     </div>
                   </li>
