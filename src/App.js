@@ -105,20 +105,25 @@ class App extends Component {
     return (
       <div className="App">
         {!this.state.isLoggedIn ? (
-            <div className="App-Login">
-              <input
-                type="text"
-                name="userToken"
-                value={this.state.userToken}
-                onChange={(event) => {
-                  this.setState({ ...this.state, userToken: event.target.value})
-                }}
-              />
-              <button onClick={() => this.logUser()}>Login</button>
-            </div>
+            <form>
+              <div class="form-group">
+                <label for="userToken">User token</label>
+                <input
+                  type="text"
+                  value={this.state.userToken}
+                  class="form-control"
+                  id="userToken"
+                  placeholder="Enter the user token"
+                  onChange={(event) => {
+                    this.setState({ ...this.state, userToken: event.target.value})
+                  }}
+                />
+              </div>
+              <button type="submit" class="btn btn-primary" onClick={() => this.logUser()}>Submit</button>
+            </form>
         ): (
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand">Partoo</a>
+            <div class="navbar-brand">Partoo</div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
