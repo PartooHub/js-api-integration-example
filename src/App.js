@@ -130,8 +130,8 @@ class App extends Component {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav mr-auto">
                 {Object.entries(this.pages).map(([page, label]) => (
-                    <li className={this.state.currentPage === page ? "nav-item active": "nav-item"}>
-                      <div key={page} className="nav-link" onClick={() => this.navigateTo(page)}>{label}</div>
+                    <li key={page} className={this.state.currentPage === page ? "nav-item active": "nav-item"}>
+                      <div className="nav-link" onClick={() => this.navigateTo(page)}>{label}</div>
                     </li>
                 ))}
                 {this.hasOverridableActions() && (
