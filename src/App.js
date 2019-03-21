@@ -14,7 +14,6 @@ const OVERRIDEABLE_ACTIONS = {
   ],
   add: [
     'business_created',
-
   ],
   edit: [
     'business_additional_info_updated',
@@ -105,9 +104,15 @@ class App extends Component {
     return (
       <div className="App">
         {!this.state.isLoggedIn ? (
+          <div className="form-container">
+            <div className="logo-container">
+              <img src="partoo_logo.png" />
+            </div>
+            <div className="alert alert-primary" role="alert">
+              JS API integration demo (<a href="https://sandbox.partoo.co/app">sandbox env</a>)
+            </div>
             <form>
               <div className="form-group">
-                <label htmlFor="userToken">User token</label>
                 <input
                   type="text"
                   value={this.state.userToken}
@@ -121,6 +126,20 @@ class App extends Component {
               </div>
               <button type="submit" className="btn btn-primary" onClick={() => this.logUser()}>Submit</button>
             </form>
+            <div className="help-container">
+                <div className="help-container--left">
+                  <a href="https://doc.partoo.fr/rest_api/authorize.html#authorizing">Generating user token</a>
+                </div>
+                <div className="help-container--right">
+                  <div>
+                    <a href="https://doc.partoo.fr/rest_api/index.html">REST API</a>
+                  </div>
+                  <div>
+                    <a href="https://doc.partoo.fr/js_api/index.html">JS API</a>
+                  </div>
+                </div>
+            </div>
+          </div>
         ): (
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="navbar-brand">Partoo</div>
